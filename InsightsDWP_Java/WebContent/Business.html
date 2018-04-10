@@ -1,0 +1,487 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+    
+  <head>
+  
+  <link href='https://fonts.googleapis.com/css?family=Catamaran' rel='stylesheet'>
+	<script>
+window.onload = function () {
+
+var chart = new CanvasJS.Chart("chartContainer2", {
+	exportEnabled: true,
+	animationEnabled: true,
+	title:{
+		text: "Keyword Contribution"
+	},
+	legend:{
+		cursor: "pointer",
+		itemclick: explodePie
+	},
+	data: [{
+		type: "pie",
+		showInLegend: true,
+		toolTipContent: "{name}: <strong>{y}%</strong>",
+		indexLabel: "{name} - {y}%",
+		dataPoints: [
+			{ y: 26, name: "School Aid", exploded: true },
+			{ y: 20, name: "Medical Aid" },
+			{ y: 5, name: "Debt/Capital" },
+			{ y: 3, name: "Elected Officials" },
+			{ y: 7, name: "University" },
+			{ y: 17, name: "Executive" },
+			{ y: 22, name: "Other Local Assistance"}
+		]
+	}]
+});
+chart.render();
+}
+
+
+</script>
+
+<script>
+window.onload = function () {
+
+
+var chart = new CanvasJS.Chart("chartContainer2", {
+	exportEnabled: true,
+	animationEnabled: true,
+	title:{
+		text: "Keyword Contribution"
+	},
+	legend:{
+		cursor: "pointer",
+		itemclick: explodePie
+	},
+	data: [{
+		type: "pie",
+		showInLegend: true,
+		toolTipContent: "{name}: <strong>{y}%</strong>",
+		indexLabel: "{name} - {y}%",
+		dataPoints: [
+			{ y: 26, name: "HDFC", exploded: true },
+			{ y: 20, name: "Tesla" },
+			{ y: 5, name: "Aviation" },
+			{ y: 3, name: "GST" },
+		]
+	}]
+});
+chart.render();
+
+
+var lineChart1 = new CanvasJS.Chart("chartContainer3", {
+	animationEnabled: true,
+	theme: "light2",
+	title:{
+		text: "HDFC - variation"
+	},
+	axisY:{
+		includeZero: false
+	},
+	data: [{        
+		type: "line",
+		lineColor:"black",
+      	lineThickness: 1,
+		markerType: "circle",
+		markerColor: "black",
+		markerSize: 5,
+			
+		dataPoints: [
+			{ y: 450 , indexLabel: "first used",markerSize: 10,markerColor: "black", markerType: "square"},
+			{ y: 414},
+			{ y: 520, indexLabel: "highest",markerSize: 10,markerColor: "green", markerType: "triangle" },
+			{ y: 460 },
+			{ y: 450 },
+			{ y: 500 },
+			{ y: 480 },
+			{ y: 480 },
+			{ y: 410 , indexLabel: "lowest",markerSize: 10,markerColor: "red", markerType: "cross" },
+			{ y: 500 },
+			{ y: 480 },
+			{ y: 510 }
+		]
+	}]
+});
+lineChart1.render();
+
+
+var lineChart2 = new CanvasJS.Chart("chartContainer4", {
+	animationEnabled: true,
+	theme: "light2",
+	title:{
+		text: "Tesla - variation"
+	},
+	axisY:{
+		includeZero: false
+	},
+	data: [{        
+		type: "line",
+		lineColor:"black",
+      	lineThickness: 1,
+		markerType: "circle",
+		markerColor: "black",
+		markerSize: 5,
+		dataPoints: [
+			{ y: 450 , indexLabel: "first used",markerSize: 10,markerColor: "green", markerType: "square"},
+			{ y: 414},
+			{ y: 520, indexLabel: "highest",markerSize: 10,markerColor: "red", markerType: "triangle" },
+			{ y: 460 },
+			{ y: 450 },
+			{ y: 500 },
+			{ y: 480 },
+			{ y: 480 },
+			{ y: 410 , indexLabel: "lowest",markerSize: 10,markerColor: "DarkSlateGrey", markerType: "cross" },
+			{ y: 500 },
+			{ y: 480 },
+			{ y: 510 }
+		]
+	}]
+});
+lineChart2.render();
+
+var lineChart3 = new CanvasJS.Chart("chartContainer5", {
+	animationEnabled: true,
+	theme: "light2",
+	title:{
+		text: "Aviation - variation"
+	},
+	axisY:{
+		includeZero: false
+	},
+	data: [{        
+		type: "line",
+		lineColor:"black",
+      	lineThickness: 1,
+		markerType: "circle",
+		markerColor: "black",
+		markerSize: 5,
+		dataPoints: [
+			{ y: 450 , indexLabel: "first used",markerSize: 10,markerColor: "black", markerType: "square"},
+			{ y: 414},
+			{ y: 520, indexLabel: "highest",markerSize: 10,markerColor: "green", markerType: "triangle" },
+			{ y: 460 },
+			{ y: 450 },
+			{ y: 500 },
+			{ y: 480 },
+			{ y: 480 },
+			{ y: 410 , indexLabel: "lowest",markerSize: 10,markerColor: "red", markerType: "cross" },
+			{ y: 500 },
+			{ y: 480 },
+			{ y: 510 }
+		]
+	}]
+});
+lineChart3.render();
+
+var lineChart4 = new CanvasJS.Chart("chartContainer6", {
+	animationEnabled: true,
+	theme: "light2",
+	title:{
+		text: "Aviation - variation"
+	},
+	axisY:{
+		includeZero: false
+	},
+	data: [{        
+		type: "line",
+		lineColor:"black",
+      	lineThickness: 1,
+		markerType: "circle",
+		markerColor: "black",
+		markerSize: 5,
+		dataPoints: [
+			{ y: 450 , indexLabel: "first used",markerSize: 10,markerColor: "black", markerType: "square"},
+			{ y: 414},
+			{ y: 520, indexLabel: "highest",markerSize: 10,markerColor: "green", markerType: "triangle" },
+			{ y: 460 },
+			{ y: 450 },
+			{ y: 500 },
+			{ y: 480 },
+			{ y: 480 },
+			{ y: 410 , indexLabel: "lowest",markerSize: 10,markerColor: "red", markerType: "cross" },
+			{ y: 500 },
+			{ y: 480 },
+			{ y: 510 }
+		]
+	}]
+});
+lineChart4.render();
+
+}
+
+function explodePie (e) {
+	if(typeof (e.dataSeries.dataPoints[e.dataPointIndex].exploded) === "undefined" || !e.dataSeries.dataPoints[e.dataPointIndex].exploded) {
+		e.dataSeries.dataPoints[e.dataPointIndex].exploded = true;
+	} else {
+		e.dataSeries.dataPoints[e.dataPointIndex].exploded = false;
+	}
+	e.chart.render();
+
+}
+function openNav() {
+    document.getElementById("mySidenav").style.width = "250px";
+}
+
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+}
+
+</script>
+      
+    <meta charset="utf-8">
+      
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
+      
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+      
+      <style>
+			#chartContainer1{<!--barchart-->
+				margin-top:100px;
+				align:right;
+				height:350px;
+				width:40%;
+			}
+			#chartContainer2{
+				margin-top:100px;
+				align:right;
+				height:450px;
+				width:450px;
+			}
+			#chartContainer3{
+				margin-top:10px;
+				margin-left:40px;
+				
+			}
+			#chartContainer4{
+				margin-top:10px;
+				margin-left:40px;
+				
+			}
+			#chartContainer5{
+				margin-top:10px;
+				margin-left:40px;
+				
+			}
+			#chartContainer6{
+				margin-top:10px;
+				margin-left:40px;
+				
+			}
+			.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: black;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+	margin-top:55px;
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 15px;
+    color: white;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav a:hover {
+    color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+				
+			
+      .nav.navbar-nav.navbar-right a {
+    color: white;
+}
+          .jumbotron {
+              
+              background-image: url('calculator-scientific.jpeg');
+              text-align: center;
+              margin-top: 50px;
+          }
+          
+          #email {
+              
+              width: 300px;
+              
+          }
+          
+          #appSummary {
+              
+              text-align: center;
+              margin-top:50px;
+              margin-bottom: 50px;
+              
+          }
+          
+          .card-img-top {
+              
+              width: 100%;
+              
+          }
+          
+          #appStoreIcon {
+		  
+		  
+              height: 1px
+              width: 1px;
+              
+          }
+          
+          #footer {
+              
+              background-color: black;
+              padding-top: 150px;
+              margin-top: 50px;
+              text-align: center;
+              padding-bottom: 150px;
+			  font-size:10px;
+			  color:white;
+          }
+          
+          body {
+              font-family: 'Catamaran';
+              position: relative;
+              
+          }
+      
+      </style>
+      
+  </head>
+    
+  <body data-spy="scroll" data-target="#navbar" data-offset="150">
+      <div class="content">
+  	<!-- notification message -->
+
+</div>
+        <nav class="navbar navbar-dark bg-dark navbar-fixed-top" style="background-color:black;color:white" id="navbar">
+		
+          <a class="navbar-brand" href="#">MyApp</a>
+          <ul class="nav navbar-nav">
+			<li class="nav-item">
+				<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="#">Business</a>
+  <a href="#">Banking</a>
+  <a href="#">Finance</a>
+  <a href="#">Technology</a>
+  <a href="#">Editorials/Opinions</a>
+</div>
+<!--<h2>Animated Sidenav Example</h2>
+<p></p>-->
+
+
+<span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+              
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#HDFC">HDFC<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#Tesla">Tesla</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#Aviation">Aviation</a>
+            </li>
+			<li class="nav-item">
+              <a class="nav-link" href="#gst">GST</a>
+            </li>
+          </ul>
+		   <form class="form-inline pull-xs-right">
+<button type="submit" onclick="location.href = 'home.html'" class="btn navbar-btn btn-secondary" >Back</button>		
+			</form>
+        
+         
+        </nav>
+
+<p class="lead">Business</p>
+	<div class="container" align="center">
+		<div class="row">
+			<div class="col-sm-12">
+				<div id="chartContainer2" ></div>
+				<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+				pie
+			</div>
+			
+		</div>
+	</div>
+	
+	<br>
+	<br>
+	<br>
+	<div class="row" id="HDFC">
+	<div id="chartContainer3" style="height: 370px; width: 100%;"></div>
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+
+</div>
+	<br>
+	<br>
+	<br>
+	<div class="row" id="Tesla">
+	<div id="chartContainer4" style="height: 370px; width: 100%;"></div>
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+</div>
+	<br>
+	<br>
+	<br>
+	<div class="row" id="Aviation">
+	<div id="chartContainer5" style="height: 370px; width: 100%;"></div>
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+</div>
+	<br>
+	<br>
+	<br>
+	<div class="row" id="gst">
+	<div id="chartContainer6" style="height: 370px; width: 100%;"></div>
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+</div>
+	
+      
+      
+      <div id="footer">
+      
+        <div class="row">
+          
+                <h2 style="color:white">Find us on social media!</h2>
+            
+            <p >And get know more about us</p>
+            
+            <p ><a href=""><img style="width:50px;height:50px;" src="fbbnw.png"></a>
+			   |      <a href=""><img style="width:50px;height:50px;" src="twitterbnw.png"></a>
+			   |      <a href=""><img style="width:50px;height:50px;" src="instabnw.png"></a>
+			
+			</p>
+            
+            
+          
+          </div>
+      
+      </div>
+      
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/js/bootstrap.min.js" integrity="sha384-vZ2WRJMwsjRMW/8U7i6PWi6AlO1L79snBrmgiDpgIWJ82z8eA5lenwvxbMV1PAh7" crossorigin="anonymous"></script>
