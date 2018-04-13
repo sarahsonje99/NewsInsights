@@ -51,7 +51,7 @@ if (isset($_POST['reg_user'])) {
   	mysqli_query($db, $query);
   	$_SESSION['username'] = $username;
   	$_SESSION['success'] = "You are now logged in";
-  	header('location: index1.php');
+  	header('location: sections.php');
   }
 }
 if (isset($_POST['login_user'])) {
@@ -68,7 +68,7 @@ if (isset($_POST['login_user'])) {
   	if (mysqli_num_rows($results) == 1) {
   	  $_SESSION['username'] = $username;
   	  $_SESSION['success'] = "You are now logged in";
-  	  header('location: index1.php');
+  	  header('location: sections.php');
   	}else {
   		array_push($errors, "Wrong username/password combination");
   	}

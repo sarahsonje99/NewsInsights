@@ -11,7 +11,7 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
-      
+
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
       
       <style>
@@ -40,7 +40,7 @@
           .card-img-top {
               
               width: 100%;
-              
+              height: 200px;
           }
           
           #appStoreIcon {
@@ -54,7 +54,7 @@
           #footer {
               
               background-color: black;
-			  color:white;
+			        color:white;
               padding-top: 150px;
               margin-top: 50px;
               text-align: center;
@@ -73,8 +73,8 @@
     
   <body data-spy="scroll" data-target="#navbar" data-offset="150">
       
-        <nav class="navbar navbar-dark bg-dark navbar-fixed-top" style="background-color:black;color:white" id="navbar">
-          <a class="navbar-brand" href="#">MyApp</a>
+        <nav class="navbar navbar-dark bg-dark navbar-fixed-top" style="background-color:black;color:white;" id="navbar">
+          <a class="navbar-brand" href="#"><h style="color:black">g</h>Vision<h style="color:black">g</h></a>
           <ul class="nav navbar-nav">
             <li class="nav-item">
               <a class="nav-link" href="#jumbotron">Home <span class="sr-only">(current)</span></a>
@@ -90,13 +90,13 @@
             <!--<input class="form-control" type="email" placeholder="Email">-->
               <!--<input class="form-control" type="password" placeholder="Password">-->
 
-            <button class="btn btn-secondary" type="submit" o><a href="login.php" style="color:black  ;text-decoration:none" >Login/Register</a></button>
+            <button class="btn btn-secondary" type="submit"><a href="login.php" style="color:black  ;text-decoration:none" >Login/Register</a></button>
           </form>
         </nav>
 
-        <div class="jumbotron" id="jumbotron">
+        <div class="jumbotron" style="overflow-x:hidden; " id="jumbotron">
           <h1 class="display-3">Insights from News</h1>
-          <p class="lead">Buzzword se bhara sentence.</p>
+          <p class="lead">VISION</p>
           <hr class="m-y-2">
           <p>Want to know more? Sign Up NOW!</p>
 
@@ -110,7 +110,7 @@
         <div class="row" id="appSummary">
           
             <h1 >Why should you sign up? </h1>
-            <p class="lead" >This is absolutely free but a shitty scope course ain't.</p>
+            <p class="lead" >This is absolutely free!</p>
           
           </div>
           

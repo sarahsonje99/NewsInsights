@@ -4,6 +4,7 @@
 <head>
   <title>Registration system PHP and MySQL</title>
   <link rel="stylesheet" type="text/css" href="style.css">
+	<link href='https://fonts.googleapis.com/css?family=Catamaran' rel='stylesheet'> 
   <style>
   .header {
   width: 30%;
@@ -11,7 +12,7 @@
   color: white;
   background-color: black;
   text-align: center;
-  border: 1px solid #B0C4DE;
+  border: 1px solid black;
   border-bottom: none;
   border-radius: 10px 10px 0px 0px;
   padding: 20px;
@@ -27,7 +28,8 @@
 body {
 					background-image: url(newspaper.jpeg);
 					background-repeat: no-repeat;
-					background-size: 100%;
+					background-height: 100%;
+					font-family: 'Catamaran';
 				}
   </style>
 </head>
@@ -55,7 +57,8 @@ body {
   	  <input type="password" name="password_2">
   	</div>
   	<div class="input-group">
-  	  <button type="submit" class="btn" name="reg_user">Register</button>
+				<br>
+  	  <h style="color:white">hjuujrtgjjrghtggtrgrh</h><button type="submit" class="btn" name="reg_user">Register</button>
   	</div>
   	<p>
   		Already a member? <a href="login.php">Sign in</a>

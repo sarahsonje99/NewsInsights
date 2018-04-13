@@ -27,65 +27,96 @@
 	<script>
 window.onload = function () {
 
-var chart = new CanvasJS.Chart("chartContainer2", {
-	exportEnabled: true,
-	animationEnabled: true,
-	title:{
-		text: "Keyword Contribution"
-	},
-	legend:{
-		cursor: "pointer",
-		itemclick: explodePie
-	},
-	data: [{
-		type: "pie",
-		showInLegend: true,
-		toolTipContent: "{name}: <strong>{y}%</strong>",
-		indexLabel: "{name} - {y}%",
-		dataPoints: [
-			{ y: 26, name: "School Aid", exploded: true },
-			{ y: 20, name: "Medical Aid" },
-			{ y: 5, name: "Debt/Capital" },
-			{ y: 3, name: "Elected Officials" },
-			{ y: 7, name: "University" },
-			{ y: 17, name: "Executive" },
-			{ y: 22, name: "Other Local Assistance"}
-		]
-	}]
-});
-chart.render();
+<?php
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "newsinsights";
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+} 
+
+$sql1 = ("SELECT SUM(frequency) as freq FROM business WHERE keywrd='HDFC' GROUP BY keywrd");
+$sql2 = ("SELECT SUM(frequency) as freq FROM business WHERE keywrd='Tesla' GROUP BY keywrd");
+$sql3 = ("SELECT SUM(frequency) as freq FROM business WHERE keywrd='Aviation' GROUP BY keywrd");
+$sql4 = ("SELECT SUM(frequency) as freq FROM business WHERE keywrd='GST' GROUP BY keywrd");
+
+
+// SELECT freq FROM (SELECT SUM(freq), day FROM business WHERE keyword='HDFC' GROUP BY day) x ORDER BY x.day
+//$sql = ("SELECT f from (SUM(freq) as f FROM business WHERE keyword='HDFC' GROUP BY day) ORDER BY day ");
+
+$result1 = $conn->query($sql1);
+$result2 = $conn->query($sql2);
+$result3 = $conn->query($sql3);
+$result4 = $conn->query($sql4);
+
+$business1 = array();
+$business2 = array();
+$business3 = array();
+$business4 = array();
+
+if ($result1->num_rows > 0) {
+    // output data of each row
+    while($row = $result1->fetch_assoc()) {
+		$business1[] = $row;
+    }
+} else {
+    echo "0 results";
+}
+
+if ($result2->num_rows > 0) {
+    // output data of each row
+    while($row = $result2->fetch_assoc()) {
+		$business2[] = $row;
+    }
+} else {
+    echo "0 results";
+}
+
+if ($result3->num_rows > 0) {
+    // output data of each row
+    while($row = $result3->fetch_assoc()) {
+		$business3[] = $row;
+    }
+} else {
+    echo "0 results";
+}
+
+if ($result4->num_rows > 0) {
+    // output data of each row
+    while($row = $result4->fetch_assoc()) {
+		$business4[] = $row;
+    }
+} else {
+    echo "0 results";
 }
 
 
-</script>
+$conn->close();
+?>
 
-<script>
-window.onload = function () {
 
-/*var barchart = new CanvasJS.Chart("chartContainer1", {
-	animationEnabled: true,
-	theme: "light2", // "light1", "light2", "dark1", "dark2"
-	title:{
-		text: "Count for past six months"
-	},
-	axisY: {
-		title: "Count"
-	},
-	data: [{        
-		type: "column",  
-		showInLegend: true, 
-		legendMarkerColor: "grey",
-		legendText: "MMbbl = one million barrels",
-		dataPoints: [      
-			{ y: 300878, label: "GST" },
-			{ y: 266455,  label: "Aviation" },
-			{ y: 169709,  label: "HDFC" },
-			{ y: 158400,  label: "Tesla" },
-			
-		]
-	}]
-});
-barchart.render();*/
+var jArrFreq1;
+jArrFreq1 = <?php echo json_encode($business1);?>;
+var f_hdfc = parseInt(jArrFreq1[0]['freq']);
+
+var jArrFreq2;
+jArrFreq2 = <?php echo json_encode($business2);?>;
+var f_tesla = parseInt(jArrFreq2[0]['freq']);
+
+var jArrFreq3;
+jArrFreq3 = <?php echo json_encode($business3);?>;
+var f_avaition= parseInt(jArrFreq3[0]['freq']);
+
+var jArrFreq4;
+jArrFreq4 = <?php echo json_encode($business4);?>;
+var f_gst = parseInt(jArrFreq4[0]['freq']);
+
+
 
 var chart = new CanvasJS.Chart("chartContainer2", {
 	exportEnabled: true,
@@ -100,13 +131,13 @@ var chart = new CanvasJS.Chart("chartContainer2", {
 	data: [{
 		type: "pie",
 		showInLegend: true,
-		toolTipContent: "{name}: <strong>{y}%</strong>",
-		indexLabel: "{name} - {y}%",
+		toolTipContent: "{name}: <strong>{y}</strong>",
+		indexLabel: "{name} - {y}",
 		dataPoints: [
-			{ y: 26, name: "HDFC", exploded: true },
-			{ y: 20, name: "Tesla" },
-			{ y: 5, name: "Aviation" },
-			{ y: 3, name: "GST" },
+			{ y: f_hdfc, name: "HDFC", exploded: true },
+			{ y: f_tesla, name: "Tesla" },
+			{ y: f_avaition, name: "Aviation" },
+			{ y: f_gst, name: "GST" },
 			/*{ y: 7, name: "University" },
 			{ y: 17, name: "Executive" },
 			{ y: 22, name: "Other Local Assistance"}*/
@@ -116,7 +147,61 @@ var chart = new CanvasJS.Chart("chartContainer2", {
 chart.render();
 
 
+<?php
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "newsinsights";
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+} 
+
+//$sql = "SELECT x.f FROM (SELECT day, SUM(freq) as f FROM business WHERE keyword='HDFC' GROUP BY day) x ORDER BY x.day";
+$sql = ("SELECT SUM(frequency) as freq FROM business WHERE keywrd='HDFC' GROUP BY day ORDER BY day ");
+// SELECT freq FROM (SELECT SUM(freq), day FROM business WHERE keyword='HDFC' GROUP BY day) x ORDER BY x.day
+//$sql = ("SELECT f from (SUM(freq) as f FROM business WHERE keyword='HDFC' GROUP BY day) ORDER BY day ");
+
+$result = $conn->query($sql);
+
+$business = array();
+
+
+if ($result->num_rows > 0) {
+    // output data of each row
+    while($row = $result->fetch_assoc()) {
+		$business[] = $row;
+    }
+} else {
+    echo "0 results";
+}
+
+$conn->close();
+?>
+var jArrFreq;
+var len = <?php echo sizeof($business);?>;
+//console.log(len);
+jArrFreq = <?php echo json_encode($business);?>;
+for(i=0; i<len; i++)
+{
+    console.log(parseInt(jArrFreq[i]['freq']));
+}
+
+var arr = new Array(len);
+arr[0] ={ 'y': 1 };
+
+for(var i=0; i<len; i++)
+{
+    arr[i]={y: parseInt(jArrFreq[i]['freq'])} ;
+}
+console.log(arr);
+
+
 var lineChart1 = new CanvasJS.Chart("chartContainer3", {
+
 	animationEnabled: true,
 	theme: "light2",
 	title:{
@@ -133,25 +218,60 @@ var lineChart1 = new CanvasJS.Chart("chartContainer3", {
 		markerColor: "black",
 		markerSize: 5,
 			
-		dataPoints: [
-			{ y: 450 , indexLabel: "first used",markerSize: 10,markerColor: "black", markerType: "square"},
-			{ y: 414},
-			{ y: 520, indexLabel: "highest",markerSize: 10,markerColor: "green", markerType: "triangle" },
-			{ y: 460 },
-			{ y: 450 },
-			{ y: 500 },
-			{ y: 480 },
-			{ y: 480 },
-			{ y: 410 , indexLabel: "lowest",markerSize: 10,markerColor: "red", markerType: "cross" },
-			{ y: 500 },
-			{ y: 480 },
-			{ y: 510 }
-		]
+		dataPoints:arr,
 	}]
 });
 lineChart1.render();
 
 
+
+<?php
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "newsinsights";
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+} 
+
+$sql = "SELECT SUM(frequency) as freq FROM business WHERE keywrd='Tesla' GROUP BY day ORDER BY day";
+$result = $conn->query($sql);
+
+$business = array();
+
+
+if ($result->num_rows > 0) {
+    // output data of each row
+    while($row = $result->fetch_assoc()) {
+		$business[] = $row;
+    }
+} else {
+    echo "0 results";
+}
+
+$conn->close();
+?>
+var jArrFreq;
+var len = <?php echo sizeof($business);?>;
+//console.log(len);
+jArrFreq = <?php echo json_encode($business);?>;
+for(i=0; i<len; i++)
+{
+    console.log(parseInt(jArrFreq[i]['freq']));
+}
+
+var arr = new Array(len);
+arr[0] ={ 'y': 1 };
+
+for(var i=0; i<len; i++)
+{
+    arr[i]={y: parseInt(jArrFreq[i]['freq'])} ;
+}
+console.log(arr);
 var lineChart2 = new CanvasJS.Chart("chartContainer4", {
 	animationEnabled: true,
 	theme: "light2",
@@ -168,23 +288,59 @@ var lineChart2 = new CanvasJS.Chart("chartContainer4", {
 		markerType: "circle",
 		markerColor: "black",
 		markerSize: 5,
-		dataPoints: [
-			{ y: 450 , indexLabel: "first used",markerSize: 10,markerColor: "green", markerType: "square"},
-			{ y: 414},
-			{ y: 520, indexLabel: "highest",markerSize: 10,markerColor: "red", markerType: "triangle" },
-			{ y: 460 },
-			{ y: 450 },
-			{ y: 500 },
-			{ y: 480 },
-			{ y: 480 },
-			{ y: 410 , indexLabel: "lowest",markerSize: 10,markerColor: "DarkSlateGrey", markerType: "cross" },
-			{ y: 500 },
-			{ y: 480 },
-			{ y: 510 }
-		]
+		dataPoints: arr,
 	}]
 });
 lineChart2.render();
+
+
+<?php
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "newsinsights";
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+} 
+
+$sql = "SELECT SUM(frequency) as freq FROM business WHERE keywrd='Aviation' GROUP BY day ORDER BY day ";
+$result = $conn->query($sql);
+
+$business = array();
+
+
+if ($result->num_rows > 0) {
+    // output data of each row
+    while($row = $result->fetch_assoc()) {
+		$business[] = $row;
+    }
+} else {
+    echo "0 results";
+}
+
+$conn->close();
+?>
+var jArrFreq;
+var len = <?php echo sizeof($business);?>;
+//console.log(len);
+jArrFreq = <?php echo json_encode($business);?>;
+for(i=0; i<len; i++)
+{
+    console.log(parseInt(jArrFreq[i]['freq']));
+}
+
+var arr = new Array(len);
+arr[0] ={ 'y': 1 };
+
+for(var i=0; i<len; i++)
+{
+    arr[i]={y: parseInt(jArrFreq[i]['freq'])} ;
+}
+console.log(arr);
 
 var lineChart3 = new CanvasJS.Chart("chartContainer5", {
 	animationEnabled: true,
@@ -202,23 +358,60 @@ var lineChart3 = new CanvasJS.Chart("chartContainer5", {
 		markerType: "circle",
 		markerColor: "black",
 		markerSize: 5,
-		dataPoints: [
-			{ y: 450 , indexLabel: "first used",markerSize: 10,markerColor: "black", markerType: "square"},
-			{ y: 414},
-			{ y: 520, indexLabel: "highest",markerSize: 10,markerColor: "green", markerType: "triangle" },
-			{ y: 460 },
-			{ y: 450 },
-			{ y: 500 },
-			{ y: 480 },
-			{ y: 480 },
-			{ y: 410 , indexLabel: "lowest",markerSize: 10,markerColor: "red", markerType: "cross" },
-			{ y: 500 },
-			{ y: 480 },
-			{ y: 510 }
-		]
+		dataPoints:arr,
 	}]
 });
 lineChart3.render();
+
+
+
+<?php
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "newsinsights";
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+} 
+
+$sql = "SELECT SUM(frequency) as freq FROM business WHERE keywrd='GST' GROUP BY day ORDER BY day";
+$result = $conn->query($sql);
+
+$business = array();
+
+
+if ($result->num_rows > 0) {
+    // output data of each row
+    while($row = $result->fetch_assoc()) {
+		$business[] = $row;
+    }
+} else {
+    echo "0 results";
+}
+
+$conn->close();
+?>
+var jArrFreq;
+var len = <?php echo sizeof($business);?>;
+//console.log(len);
+jArrFreq = <?php echo json_encode($business);?>;
+for(i=0; i<len; i++)
+{
+    console.log(parseInt(jArrFreq[i]['freq']));
+}
+
+var arr = new Array(len);
+arr[0] ={ 'y': 1 };
+
+for(var i=0; i<len; i++)
+{
+    arr[i]={y: parseInt(jArrFreq[i]['freq'])} ;
+}
+console.log(arr);
 
 var lineChart4 = new CanvasJS.Chart("chartContainer6", {
 	animationEnabled: true,
@@ -236,20 +429,7 @@ var lineChart4 = new CanvasJS.Chart("chartContainer6", {
 		markerType: "circle",
 		markerColor: "black",
 		markerSize: 5,
-		dataPoints: [
-			{ y: 450 , indexLabel: "first used",markerSize: 10,markerColor: "black", markerType: "square"},
-			{ y: 414},
-			{ y: 520, indexLabel: "highest",markerSize: 10,markerColor: "green", markerType: "triangle" },
-			{ y: 460 },
-			{ y: 450 },
-			{ y: 500 },
-			{ y: 480 },
-			{ y: 480 },
-			{ y: 410 , indexLabel: "lowest",markerSize: 10,markerColor: "red", markerType: "cross" },
-			{ y: 500 },
-			{ y: 480 },
-			{ y: 510 }
-		]
+		dataPoints:arr,
 	}]
 });
 lineChart4.render();
@@ -419,19 +599,38 @@ function closeNav() {
   </head>
     
   <body data-spy="scroll" data-target="#navbar" data-offset="150">
+  
+<div class="content">
+  	<!-- notification message -->
+  	<?php if (isset($_SESSION['success'])) : ?>
+      <div class="error success" >
+      	<h3>
+          <?php 
+          	echo $_SESSION['success']; 
+          	unset($_SESSION['success']);
+          ?>
+      	</h3>
       
-        <nav class="navbar navbar-dark bg-dark navbar-fixed-top" style="background-color:black;color:white" id="navbar">
+  	<?php endif ?>
+
+    <!-- logged in user information -->
+    <?php  if (isset($_SESSION['username'])) : ?>
+    	<p>Welcome <strong><?php echo $_SESSION['username']; ?></strong></p>
+    	<!--<p> <a href="Business.php?logout='1'" style="color: red;">logout</a> </p>-->
+	
+    <?php endif ?>
+</div>
+        <nav class="navbar navbar-dark bg-dark navbar-fixed-top" style="background-color:black; color:white" id="navbar">
 		
-          <a class="navbar-brand" href="#">MyApp</a>
+		<a class="navbar-brand" href="#"><h style="color:black">g</h>Vision<h style="color:black">g</h></a>
           <ul class="nav navbar-nav">
 			<li class="nav-item">
 				<div id="mySidenav" class="sidenav">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-  <a href="#">Business</a>
-  <a href="#">Banking</a>
-  <a href="#">Finance</a>
-  <a href="#">Technology</a>
-  <a href="#">Editorials/Opinions</a>
+  <a href="Business.php">Business</a>
+  <a href="Banking.php">Banking</a>
+  <a href="Finance.php">Finance</a>
+  <a href="Technology.php">Technology</a>
 </div>
 <!--<h2>Animated Sidenav Example</h2>
 <p></p>-->
@@ -454,41 +653,10 @@ function closeNav() {
             </li>
           </ul>
           <form class="form-inline pull-xs-right">
-            <button class="btn btn-secondary" type="submit"><a href="index1.php" style="color:black ;text-decoration:none">Back</a></button>
+            <button class="btn btn-secondary" type="submit"><a href="home.php" style="color:black ;text-decoration:none">Logout</a></button>
           </form>
         </nav>
-		
 
-		<!--	<div id="mySidenav" class="sidenav">
-			  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-			  <a href="#">About</a>
-			  <a href="#">Services</a>
-			  <a href="#">Clients</a>
-			  <a href="#">Contact</a>
-			</div>
-
-<h2>Animated Sidenav Example</h2>
-<p>Click on the element below to open the side navigation menu.</p>
-<span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>-->
-
-    <!--    <div class="jumbotron" id="jumbotron">
-          <h1 class="display-3">XYZ Classes</h1>
-          <p class="lead">A pioneer in competitive exams since its inception!</p>
-          <hr class="m-y-2">
-          <p>Want to know more? Sign Up NOW!</p>
-
-        <form class="form-inline">
-          <div class="form-group">
-            <label class="sr-only" for="email">Email address</label>
-            <div class="input-group">
-              <div class="input-group-addon">@</div>
-              <input type="email" class="form-control" id="email" placeholder="Your email">
-            </div>
-          </div>
-          <button type="submit" class="btn btn-primary">Sign up</button>
-        </form>
-        </div>-->
-		
 		
 	<div class="container" align="center">
 		<div class="row">
@@ -572,49 +740,7 @@ function closeNav() {
 </div>
 </div>
 	
-      
-   <!--   <div class="container">
-      
-        <div class="row" id="appSummary">
-          
-            <h1>XYZ </h1>
-            <p class="lead">A champion creator since 15000 years</p>
-          
-          </div>
-          
-      </div>
-      
-     <!-- <div class="container" id="about">
-      <div class="card-deck-wrapper">
-  <div class="card-deck">
-    <div class="card">
-      <img class="card-img-top" src="physics.jpg" alt="Card image cap">
-      <div class="card-block">
-        <h4 class="card-title">Physics</h4>
-        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additiona</p>
-        
-      </div>
-    </div>
-    <div class="card">
-      <img class="card-img-top" src="chemistry.jpeg" alt="Card image cap">
-      <div class="card-block">
-        <h4 class="card-title">Chemistry</h4>
-        <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-        
-      </div>
-    </div>
-    <div class="card">
-      <img class="card-img-top" src="math.jpg" alt="Card image cap">
-      <div class="card-block">
-        <h4 class="card-title">Mathematics</h4>
-        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additio</p>
-       
-      </div>
-    </div>
-  </div>
-</div>
-          </div>-->
-      
+
       <div id="footer">
       
         <div class="row">

@@ -4,6 +4,7 @@
 <head>
   <title>Registration system PHP and MySQL</title>
   <link rel="stylesheet" type="text/css" href="style.css">
+  <link href='https://fonts.googleapis.com/css?family=Catamaran' rel='stylesheet'>  
     <style>
   .header {
   width: 30%;
@@ -11,7 +12,7 @@
   color: white;
   background-color: black;
   text-align: center;
-  border: 1px solid #B0C4DE;
+  border: 1px solid black;
   border-bottom: none;
   border-radius: 10px 10px 0px 0px;
   padding: 20px;
@@ -27,7 +28,10 @@
 body {
 					background-image: url(newspaper.jpeg);
 					background-repeat: no-repeat;
-					background-size: 100%;
+					background-height: 100%;
+          font-family: 'Catamaran';
+          position: relative;
+              
 				}
   </style>
 </head>
@@ -46,12 +50,14 @@ body {
   		<label>Password</label>
   		<input type="password" name="password">
   	</div>
+    <br>
   	<div class="input-group">
-  		<button type="submit" class="btn" name="login_user">Login</button>
-		<button class="btn btn-secondary" type="submit"><a href="home.php" style="color: white;">Home</a></button> 
+        <h style="color:white">bjhyjhgjgjjtr</h>
+        <button type="submit" class="btn" name="login_user">Login</button><h style="color:white">fgrhthjtr</h>
+		  <button class="btn btn-secondary" type="submit"><a href="home.php" style="color: white; text-decoration:none;">Home</a></button> 
   	</div>
-  	<p>
-  		Not yet a member? <a href="register.php">Sign up</a>
+  	<p><br>
+    <h style="color:white">bjhjhhjgjjtr</h>Not yet a member? <a href="register.php">Sign up</a>
 		 
   	</p>
   </form>
