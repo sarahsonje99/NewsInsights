@@ -59,7 +59,7 @@ public class description extends note
         
         try
         {
-            Object object = parser.parse(new FileReader("C:\\\\Users\\\\Sarah\\\\Documents\\\\Second Year Engineering\\\\InsightsJava\\\\src\\\\Business1.json"));
+            Object object = parser.parse(new FileReader("C:\\Users\\Sarah\\Documents\\Second Year Engineering\\InsightsJava\\src\\Business1.json"));
             JSONObject jsonObject = (JSONObject)object;
             JSONArray a1 = (JSONArray)jsonObject.get("articles");
             String s = null;
@@ -85,7 +85,7 @@ public class description extends note
             
             }
             
-            Object object1 = parser.parse(new FileReader("C:\\\\\\\\Users\\\\\\\\Sarah\\\\\\\\Documents\\\\\\\\Second Year Engineering\\\\\\\\InsightsJava\\\\\\\\src\\\\\\\\Business2.json"));
+            Object object1 = parser.parse(new FileReader("C:\\Users\\Sarah\\Documents\\Second Year Engineering\\InsightsJava\\src\\Business2.json"));
             JSONObject jsonObject1 = (JSONObject)object1;
             JSONArray a2 = (JSONArray)jsonObject1.get("articles");
            
@@ -109,7 +109,7 @@ public class description extends note
             }
             
             
-            Object object2 = parser.parse(new FileReader("C:\\\\\\\\\\\\\\\\Users\\\\\\\\\\\\\\\\Sarah\\\\\\\\\\\\\\\\Documents\\\\\\\\\\\\\\\\Second Year Engineering\\\\\\\\\\\\\\\\InsightsJava\\\\\\\\\\\\\\\\src\\\\\\\\\\\\\\\\Business3.json"));
+            Object object2 = parser.parse(new FileReader("C:\\Users\\Sarah\\Documents\\Second Year Engineering\\InsightsJava\\src\\Business3.json"));
             JSONObject jsonObject2 = (JSONObject)object2;
             JSONArray a3 = (JSONArray)jsonObject2.get("articles");
            
@@ -134,7 +134,7 @@ public class description extends note
             
             
             
-            Object object3 = parser.parse(new FileReader("C:\\\\\\\\\\\\\\\\Users\\\\\\\\\\\\\\\\Sarah\\\\\\\\\\\\\\\\Documents\\\\\\\\\\\\\\\\Second Year Engineering\\\\\\\\\\\\\\\\InsightsJava\\\\\\\\\\\\\\\\src\\\\\\\\\\\\\\\\Business4.json"));
+            Object object3 = parser.parse(new FileReader("C:\\Users\\\Sarah\\Documents\\Second Year Engineering\\InsightsJava\\src\\Business4.json"));
             JSONObject jsonObject3 = (JSONObject)object3;
             JSONArray a4 = (JSONArray)jsonObject3.get("articles");
            
@@ -159,7 +159,7 @@ public class description extends note
             
             
             
-            Object object4 = parser.parse(new FileReader("C:\\\\\\\\\\\\\\\\Users\\\\\\\\\\\\\\\\Sarah\\\\\\\\\\\\\\\\Documents\\\\\\\\\\\\\\\\Second Year Engineering\\\\\\\\\\\\\\\\InsightsJava\\\\\\\\\\\\\\\\src\\\\\\\\\\\\\\\\Banking1.json"));
+            Object object4 = parser.parse(new FileReader("C:\\Users\\Sarah\\Documents\\Second Year Engineering\\InsightsJava\\src\\Banking1.json"));
             JSONObject jsonObject4 = (JSONObject)object4;
             JSONArray a5 = (JSONArray)jsonObject4.get("articles");
            
@@ -184,7 +184,7 @@ public class description extends note
             }
             
             
-            Object object5 = parser.parse(new FileReader("C:\\\\\\\\\\\\\\\\Users\\\\\\\\\\\\\\\\Sarah\\\\\\\\\\\\\\\\Documents\\\\\\\\\\\\\\\\Second Year Engineering\\\\\\\\\\\\\\\\InsightsJava\\\\\\\\\\\\\\\\src\\\\\\\\\\\\\\\\Banking2.json"));
+            Object object5 = parser.parse(new FileReader("C:\\Users\\Sarah\\Documents\\Second Year Engineering\\InsightsJava\\src\\Banking2.json"));
             JSONObject jsonObject5 = (JSONObject)object5;
             JSONArray a6 = (JSONArray)jsonObject5.get("articles");
            
@@ -209,7 +209,7 @@ public class description extends note
             
             
             
-            Object object6 = parser.parse(new FileReader("C:\\\\\\\\\\\\\\\\Users\\\\\\\\\\\\\\\\Sarah\\\\\\\\\\\\\\\\Documents\\\\\\\\\\\\\\\\Second Year Engineering\\\\\\\\\\\\\\\\InsightsJava\\\\\\\\\\\\\\\\src\\\\\\\\\\\\\\\\Banking3.json"));
+            Object object6 = parser.parse(new FileReader("C:\\Users\\Sarah\\Documents\\Second Year Engineering\\InsightsJava\\src\\Banking3.json"));
             JSONObject jsonObject6 = (JSONObject)object6;
             JSONArray a7 = (JSONArray)jsonObject6.get("articles");
            
@@ -234,7 +234,7 @@ public class description extends note
             
             
             
-            Object object7 = parser.parse(new FileReader("C:\\\\\\\\\\\\\\\\Users\\\\\\\\\\\\\\\\Sarah\\\\\\\\\\\\\\\\Documents\\\\\\\\\\\\\\\\Second Year Engineering\\\\\\\\\\\\\\\\InsightsJava\\\\\\\\\\\\\\\\src\\\\\\\\\\\\\\\\Banking44.json"));
+            Object object7 = parser.parse(new FileReader("C:\\Users\\Sarah\\Documents\\Second Year Engineering\\InsightsJava\\src\\Banking44.json"));
             JSONObject jsonObject7 = (JSONObject)object7;
             JSONArray a8 = (JSONArray)jsonObject7.get("articles");
            
@@ -258,7 +258,7 @@ public class description extends note
             }
             
             
-            Object object8 = parser.parse(new FileReader("C:\\\\\\\\\\\\\\\\Users\\\\\\\\\\\\\\\\Sarah\\\\\\\\\\\\\\\\Documents\\\\\\\\\\\\\\\\Second Year Engineering\\\\\\\\\\\\\\\\InsightsJava\\\\\\\\\\\\\\\\src\\\\\\\\\\\\\\\\Finance1.json"));
+            Object object8 = parser.parse(new FileReader("C:\\Users\\Sarah\\Documents\\Second Year Engineering\\InsightsJava\\src\\Finance1.json"));
             JSONObject jsonObject8 = (JSONObject)object8;
             JSONArray a9 = (JSONArray)jsonObject8.get("articles");
            
@@ -283,7 +283,7 @@ public class description extends note
             
             
             
-            Object object9 = parser.parse(new FileReader("C:\\\\\\\\\\\\\\\\Users\\\\\\\\\\\\\\\\Sarah\\\\\\\\\\\\\\\\Documents\\\\\\\\\\\\\\\\Second Year Engineering\\\\\\\\\\\\\\\\InsightsJava\\\\\\\\\\\\\\\\src\\\\\\\\\\\\\\\\Finance2.json"));
+            Object object9 = parser.parse(new FileReader("C:\\Users\\Sarah\\Documents\\Second Year Engineering\\InsightsJava\\src\\Finance2.json"));
             JSONObject jsonObject9 = (JSONObject)object9;
             JSONArray a10 = (JSONArray)jsonObject9.get("articles");
            
@@ -308,7 +308,7 @@ public class description extends note
             
             
             
-            Object object10 = parser.parse(new FileReader("C:\\\\\\\\\\\\\\\\Users\\\\\\\\\\\\\\\\Sarah\\\\\\\\\\\\\\\\Documents\\\\\\\\\\\\\\\\Second Year Engineering\\\\\\\\\\\\\\\\InsightsJava\\\\\\\\\\\\\\\\src\\\\\\\\\\\\\\\\Finance3.json"));
+            Object object10 = parser.parse(new FileReader("C:\\Users\\Sarah\\Documents\\Second Year Engineering\\InsightsJava\\src\\Finance3.json"));
             JSONObject jsonObject10 = (JSONObject)object10;
             JSONArray a11 = (JSONArray)jsonObject10.get("articles");
            
@@ -333,7 +333,7 @@ public class description extends note
             
             
             
-            Object object11 = parser.parse(new FileReader("C:\\\\\\\\\\\\\\\\Users\\\\\\\\\\\\\\\\Sarah\\\\\\\\\\\\\\\\Documents\\\\\\\\\\\\\\\\Second Year Engineering\\\\\\\\\\\\\\\\InsightsJava\\\\\\\\\\\\\\\\src\\\\\\\\\\\\\\\\Finance4.json"));
+            Object object11 = parser.parse(new FileReader("C:\\Users\\Sarah\\Documents\\Second Year Engineering\\InsightsJava\\src\\Finance4.json"));
             JSONObject jsonObject11 = (JSONObject)object11;
             JSONArray a12 = (JSONArray)jsonObject11.get("articles");
            
@@ -357,7 +357,7 @@ public class description extends note
             }
             
             
-            Object object12 = parser.parse(new FileReader("C:\\\\\\\\\\\\\\\\Users\\\\\\\\\\\\\\\\Sarah\\\\\\\\\\\\\\\\Documents\\\\\\\\\\\\\\\\Second Year Engineering\\\\\\\\\\\\\\\\InsightsJava\\\\\\\\\\\\\\\\src\\\\\\\\\\\\\\\\Technology1.json"));
+            Object object12 = parser.parse(new FileReader("C:\\Users\\Sarah\\Documents\\Second Year Engineering\\InsightsJava\\src\\Technology1.json"));
             JSONObject jsonObject12 = (JSONObject)object12;
             JSONArray a13 = (JSONArray)jsonObject12.get("articles");
            
@@ -381,7 +381,7 @@ public class description extends note
             }
             
             
-            Object object13 = parser.parse(new FileReader("C:\\\\\\\\\\\\\\\\Users\\\\\\\\\\\\\\\\Sarah\\\\\\\\\\\\\\\\Documents\\\\\\\\\\\\\\\\Second Year Engineering\\\\\\\\\\\\\\\\InsightsJava\\\\\\\\\\\\\\\\src\\\\\\\\\\\\\\\\Technology2.json"));
+            Object object13 = parser.parse(new FileReader("C:\\Users\\Sarah\\Documents\\Second Year Engineering\\InsightsJava\\src\\Technology2.json"));
             JSONObject jsonObject13 = (JSONObject)object13;
             JSONArray a14 = (JSONArray)jsonObject13.get("articles");
            
@@ -405,7 +405,7 @@ public class description extends note
             }
             
             
-            Object object14 = parser.parse(new FileReader("C:\\\\\\\\\\\\\\\\Users\\\\\\\\\\\\\\\\Sarah\\\\\\\\\\\\\\\\Documents\\\\\\\\\\\\\\\\Second Year Engineering\\\\\\\\\\\\\\\\InsightsJava\\\\\\\\\\\\\\\\src\\\\\\\\\\\\\\\\Technology3.json"));
+            Object object14 = parser.parse(new FileReader("C:\\Users\\Sarah\\Documents\\Second Year Engineering\\InsightsJava\\src\\Technology3.json"));
             JSONObject jsonObject14 = (JSONObject)object14;
             JSONArray a15 = (JSONArray)jsonObject14.get("articles");
            
@@ -430,7 +430,7 @@ public class description extends note
             
             
             
-            Object object15 = parser.parse(new FileReader("C:\\\\\\\\\\\\\\\\Users\\\\\\\\\\\\\\\\Sarah\\\\\\\\\\\\\\\\Documents\\\\\\\\\\\\\\\\Second Year Engineering\\\\\\\\\\\\\\\\InsightsJava\\\\\\\\\\\\\\\\src\\\\\\\\\\\\\\\\Technology4.json"));
+            Object object15 = parser.parse(new FileReader("C:\\Users\\Sarah\\Documents\\Second Year Engineering\\InsightsJava\\src\\Technology4.json"));
             JSONObject jsonObject15 = (JSONObject)object15;
             JSONArray a16 = (JSONArray)jsonObject15.get("articles");
            
